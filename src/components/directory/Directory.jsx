@@ -1,7 +1,7 @@
 import React from "react";
 import MenuItem from "../menu-item/MenuItem";
 
-import './directory.scss'
+import "./directory.scss";
 
 class Directory extends React.Component {
   constructor() {
@@ -11,35 +11,35 @@ class Directory extends React.Component {
         {
           title: "hats",
           imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
-          size: 'large',
+          size: "large",
           id: 1,
-          linkUrl: "shop/hats",
+          linkUrl: "hats",
         },
         {
           title: "jackets",
           imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
-          size: 'large',
+          size: "large",
           id: 2,
           linkUrl: "shop/jackets",
         },
         {
           title: "sneakers",
           imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
-          size: 'large',
+          size: "large",
           id: 3,
           linkUrl: "shop/sneakers",
         },
         {
           title: "womens",
           imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
-          size: 'large',
+          size: "large",
           id: 4,
           linkUrl: "shop/womens",
         },
         {
           title: "mens",
           imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
-          size: 'large',
+          size: "large",
           id: 5,
           linkUrl: "shop/mens",
         },
@@ -50,13 +50,14 @@ class Directory extends React.Component {
   render() {
     return (
       <div className="directory-menu">
-        {this.state.sections.map(({id, imageUrl, title, size}) => (
-          <MenuItem 
+        {this.state.sections.map(({ id, imageUrl, title, size, linkUrl }) => (
+          <MenuItem
             key={id}
             title={title}
             imageUrl={imageUrl}
             size={size}
-            />
+            linkUrl={linkUrl}
+          />
         ))}
       </div>
     );
