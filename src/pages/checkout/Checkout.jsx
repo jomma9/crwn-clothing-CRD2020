@@ -1,13 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
-import { createSelectorCreator } from "reselect";
-import {
-  selectCartItems,
-  selectCartTotatl,
-} from "../../redux/cart/cart.selectors.js";
+// import { createSelectorCreator } from "reselect";
+// import {
+//   selectCartItems,
+//   selectCartTotatl,
+// } from "../../redux/cart/cart.selectors.js";
 import CheckoutItem from "../../components/checkout-item/CheckoutItem";
 
 import "./checkout.scss";
+import StripeButton from "../../components/stripe-button/StripeButton.jsx";
 
 const Checkout = ({ cartItems, total }) => (
   <div className="checkout-page">
@@ -31,9 +32,8 @@ const Checkout = ({ cartItems, total }) => (
     {cartItems.map((cartItem) => (
       <CheckoutItem key={cartItem.id} cartItem={cartItem} />
     ))}
-    <div className="total">
-      <span>TOTAL: ${total}</span>
-    </div>
+    <div className="total">TOTAL: ${total}</div>
+    <StripeButton price={total} />
   </div>
 );
 
